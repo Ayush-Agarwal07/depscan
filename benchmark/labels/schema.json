@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Benchmark ground-truth labels for one repository",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["repo", "repo_path", "labeled_by", "components", "out_of_scope", "ruled_out", "notes"],
+  "properties": {
+    "repo": {"type": "string", "minLength": 1},
+    "repo_path": {"type": "string", "minLength": 1},
+    "labeled_by": {"type": "string"},
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["canonical_name", "hosting", "default_target", "version", "python_evidence", "evidence", "confidence", "notes"],
+        "properties": {
+          "canonical_name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*/[a-z0-9][a-z0-9.-]*$"},
+          "hosting": {"enum": ["cloud", "self-hosted"]},
+          "default_target": {"type": ["string", "null"]},
+          "version": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["api", "package", "package_name"],
+            "properties": {
+              "api": {"type": ["string", "null"]},
+              "package": {"type": ["string", "null"]},
+              "package_name": {"type": ["string", "null"]}
+            }
+          },
+          "python_evidence": {"type": "boolean"},
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["location", "note"],
+              "properties": {
+                "location": {"type": "string", "pattern": "^[^:]+:[0-9]+$"},
+                "note": {"type": "string"}
+              }
+            }
+          },
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "out_of_scope": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "location", "reason"],
+        "properties": {
+          "name": {"type": "string"},
+          "location": {"type": "string"},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "ruled_out": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["target", "location", "reason"],
+        "properties": {
+          "target": {"type": "string"},
+          "location": {"type": "string", "pattern": "^[^:]+(:[0-9]+)?$"},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}

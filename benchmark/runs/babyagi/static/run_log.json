@@ -1,0 +1,53 @@
+{
+  "depscan_version": "0.5.2",
+  "repo": "babyagi",
+  "mode": "static",
+  "requested_llm": "claude-cli",
+  "provider": null,
+  "model": null,
+  "prompt_sha256": null,
+  "llm_questions": 0,
+  "api_calls": 0,
+  "cache_hits": 0,
+  "invalid_answers": 0,
+  "tokens": {},
+  "tokens_cold_run": {},
+  "cost_usd": 0.0,
+  "cost_usd_cold_run": 0.0,
+  "seconds": {
+    "scan": 0.3,
+    "prepare": 0.1,
+    "classify": 0.0,
+    "merge": 0.0,
+    "total": 0.4
+  },
+  "scan": {
+    "files_scanned": 40,
+    "call_sites": 1520,
+    "counts": {
+      "known_sdk": 158,
+      "unclear": 152,
+      "ignored": 1210
+    },
+    "dependency_files": [
+      "poetry.lock",
+      "pyproject.toml",
+      "requirements.txt"
+    ],
+    "import_roots": [
+      ".",
+      "babyagi",
+      "babyagi/functionz/packs/plugins"
+    ],
+    "renames": {},
+    "exclude_patterns": [],
+    "skip": []
+  },
+  "parse_failures": [
+    "babyagi/functionz/packs/drafts/user_db.py: SyntaxError: invalid syntax (user_db.py, line 447)"
+  ],
+  "components": 5,
+  "installed_versions_read": false,
+  "tool_hash": "60356424b0268079770f8504f34135bc21943b4e72f69bba2b21f12122c08eed",
+  "benchmark_set": "heldout"
+}

@@ -1,0 +1,79 @@
+{
+  "mode": "llm_only",
+  "repo": "shell_gpt",
+  "components": [
+    {
+      "canonical_name": "openai-compatible/chat-completions",
+      "hosting": "cloud",
+      "default_target": "openai",
+      "package_name": "openai",
+      "package_version": null,
+      "declared_range": ">= 2.0.0, < 3.0.0",
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: requirements_spec:pyproject.toml; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 2
+      },
+      "min_confidence": 0.75,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "sgpt/handlers/handler.py:123",
+          "callee": "openai.OpenAI().chat.completions.create",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "sgpt/handlers/handler.py:159",
+          "callee": "sgpt.handlers.handler.Handler().get_completion",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        }
+      ]
+    },
+    {
+      "canonical_name": "openai/chat-completions",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": "openai",
+      "package_version": null,
+      "declared_range": ">= 2.0.0, < 3.0.0",
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: requirements_spec:pyproject.toml; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 1
+      },
+      "min_confidence": 0.88,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "sgpt/handlers/handler.py:31",
+          "callee": "openai.OpenAI",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.88
+        }
+      ]
+    }
+  ],
+  "inbound": {
+    "role": "inbound",
+    "packages": {},
+    "call_sites": 0,
+    "evidence": []
+  },
+  "hosting_conflicts": [],
+  "renames_detected": {},
+  "exclude_patterns": []
+}

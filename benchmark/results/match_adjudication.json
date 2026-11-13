@@ -1,0 +1,13 @@
+{
+  "note": "Scorer rules applied on top of name/evidence/provider matching. forbidden_pairs: (repo, tool name, label name) pairs a reviewer judged to be different services even though the evidence/provider rule matched them. forbidden_tool_names: tool names that never match a named service.",
+  "forbidden_pairs": [],
+  "forbidden_tool_names": [
+    "web/arbitrary-url",
+    "httpx/sdk",
+    "requests/sdk",
+    "aiohttp/sdk",
+    "urllib3/sdk",
+    "trafilatura/sdk"
+  ],
+  "forbidden_tool_names_reason": "web/arbitrary-url is the tool's name for 'the code does not fix the host'; <library>/sdk names for generic HTTP clients (httpx, requests, aiohttp, urllib3, trafilatura) are static mode's guess for a client library, not the service it calls. Matching either to a specific labeled service by line proximity would credit the tool with an identification it did not make."
+}

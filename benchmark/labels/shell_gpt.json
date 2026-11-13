@@ -1,0 +1,120 @@
+{
+  "repo": "shell_gpt",
+  "repo_path": "benchmark/repos/shell_gpt",
+  "labeled_by": "isolated subagent",
+  "components": [
+    {
+      "canonical_name": "openai-compatible/chat-completions",
+      "hosting": "cloud",
+      "default_target": "openai",
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "sgpt/handlers/handler.py:31",
+          "note": "OpenAI(**additional_kwargs) with base_url from API_BASE_URL config (None when 'default' -> SDK default api.openai.com)"
+        },
+        {
+          "location": "sgpt/handlers/handler.py:123",
+          "note": "completion(...) = client.chat.completions.create(model=..., messages=..., stream=True, tools=...)"
+        },
+        {
+          "location": "sgpt/config.py:35",
+          "note": "API_BASE_URL env/config, default 'default' (OpenAI SDK default endpoint)"
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "Default path (USE_LITELLM=false). Base URL is user-configurable via API_BASE_URL, so named by protocol; default resolves to OpenAI's API via the SDK default. openai dependency is a range (>=2.0.0,<3.0.0), so no package version. No API version literally in code."
+    },
+    {
+      "canonical_name": "litellm/completion",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": "1.83.4",
+        "package_name": "litellm"
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "sgpt/handlers/handler.py:24",
+          "note": "import litellm when USE_LITELLM=true"
+        },
+        {
+          "location": "sgpt/handlers/handler.py:26",
+          "note": "completion = litellm.completion, then called at handler.py:123 with model from DEFAULT_MODEL/--model, api_key, base_url"
+        },
+        {
+          "location": "pyproject.toml:38",
+          "note": "optional extra pins litellm == 1.83.4"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional provider selected by USE_LITELLM config flag; routes to whatever provider the model string names (README mentions Ollama/local LLMs, Azure via wiki). Labeled as multi-provider library; hosting set to cloud since the default model gpt-5.4-mini would route to OpenAI, but it may target a self-hosted backend (e.g. Ollama)."
+    }
+  ],
+  "out_of_scope": [],
+  "ruled_out": [
+    {
+      "target": "completion dispatch (litellm vs openai)",
+      "location": "sgpt/handlers/handler.py:23",
+      "reason": "dispatcher choosing backend; concrete services labeled separately"
+    },
+    {
+      "target": "Cache (request cache)",
+      "location": "sgpt/cache.py:7",
+      "reason": "plain local file cache in temp dir, not a database or service"
+    },
+    {
+      "target": "ChatSession (chat history storage)",
+      "location": "sgpt/handlers/chat_handler.py:19",
+      "reason": "JSON files on local disk, not a data store service"
+    },
+    {
+      "target": "execute_shell_command LLM function",
+      "location": "sgpt/llm_functions/common/execute_shell.py:20",
+      "reason": "local subprocess running arbitrary shell command; no fixed server contacted"
+    },
+    {
+      "target": "execute_apple_script LLM function (osascript)",
+      "location": "sgpt/llm_functions/mac/apple_script.py:23",
+      "reason": "local osascript subprocess, no network service"
+    },
+    {
+      "target": "run_command / $EDITOR via os.system",
+      "location": "sgpt/utils.py:53",
+      "reason": "local shell/editor subprocess"
+    },
+    {
+      "target": "localhost URLs",
+      "location": "tests/_integration.py:180",
+      "reason": "test prompts only, not runtime calls"
+    },
+    {
+      "target": "requests-mock",
+      "location": "pyproject.toml:44",
+      "reason": "test-only dependency"
+    },
+    {
+      "target": "Ollama / Azure integrations",
+      "location": "README.md:484",
+      "reason": "only documented via wiki links; no Python code hard-codes them (reachable only through configurable base URL or litellm model string)"
+    },
+    {
+      "target": "distro library",
+      "location": "sgpt/role.py:11",
+      "reason": "local OS detection library"
+    },
+    {
+      "target": "Dockerfile apt/pip install",
+      "location": "Dockerfile:11",
+      "reason": "build-time only, not Python runtime"
+    }
+  ],
+  "notes": "Small CLI. Only network egress is the LLM call in sgpt/handlers/handler.py: either the OpenAI SDK (default, base URL configurable via API_BASE_URL, default OpenAI) or litellm.completion when USE_LITELLM=true. No other HTTP, DB, or download code in the sgpt package. No lockfile present."
+}

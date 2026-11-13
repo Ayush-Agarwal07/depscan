@@ -1,0 +1,26 @@
+[
+  {
+    "name": "full-stack-fastapi-template",
+    "set": "heldout",
+    "path": "benchmark/repos/full-stack-fastapi-template",
+    "url": "https://github.com/fastapi/full-stack-fastapi-template.git",
+    "sha": "aabb90126964a164e02aff39e7c385bb0598236d",
+    "note": "public repo; labeled before any accuracy fix was written"
+  },
+  {
+    "name": "shell_gpt",
+    "set": "heldout",
+    "path": "benchmark/repos/shell_gpt",
+    "url": "https://github.com/TheR1D/shell_gpt.git",
+    "sha": "a082bd5327ce0c4ef5a0284d9060e833be9444a6",
+    "note": "public repo; labeled before any accuracy fix was written"
+  },
+  {
+    "name": "babyagi",
+    "set": "heldout",
+    "path": "benchmark/repos/babyagi",
+    "url": "https://github.com/yoheinakajima/babyagi.git",
+    "sha": "fa8930ebe72a82e5ad57b356e7cbec96290e5bb2",
+    "note": "public repo; labeled before any accuracy fix was written"
+  }
+]

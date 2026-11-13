@@ -1,0 +1,459 @@
+{
+  "repo": "babyagi",
+  "repo_path": "benchmark/repos/babyagi",
+  "labeled_by": "isolated subagent",
+  "components": [
+    {
+      "canonical_name": "sqlite/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/db/local_db.py:14",
+          "note": "SQLAlchemy create_engine on default db_path 'sqlite:///funztionz.db' (line 13); the function/log/secret store used on every import"
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/user_db.py:46",
+          "note": "draft user_db pack creates per-user SQLite files 'sqlite:///{db_name}.sqlite'"
+        }
+      ],
+      "confidence": 0.97,
+      "notes": "sqlalchemy is a range pin (>=1.4,<2.0) in requirements.txt and absent from poetry.lock, so no package version."
+    },
+    {
+      "canonical_name": "litellm/completion",
+      "hosting": "cloud",
+      "default_target": "openai",
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:13",
+          "note": "litellm completion(model=\"gpt-4o\") in gpt_call (default pack, auto-loaded)"
+        },
+        {
+          "location": "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "note": "litellm.completion(model=\"gpt-4-turbo\", tools=...) in chat_with_functions"
+        },
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:105",
+          "note": "litellm embedding(**params) in embed_input"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Multi-provider library; all call sites hard-code OpenAI model names (gpt-4o, gpt-4-turbo, gpt-4o-mini, gpt-3.5-turbo, text-embedding-ada-002), so the concrete provider is also labeled separately as openai/*. litellm.embedding() calls are folded into this one library component rather than a separate litellm/embedding entry. litellm is unpinned in requirements.txt."
+    },
+    {
+      "canonical_name": "openai/chat-completions",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:13",
+          "note": "completion(model=\"gpt-4o\") via litellm, key_dependencies openai_api_key"
+        },
+        {
+          "location": "babyagi/functionz/packs/default/function_calling_chat.py:113",
+          "note": "model=\"gpt-4-turbo\" with tool calling; key_dependencies OPENAI_API_KEY"
+        },
+        {
+          "location": "main.py:8",
+          "note": "stores OPENAI_API_KEY env var as openai_api_key secret for the LLM functions"
+        }
+      ],
+      "confidence": 0.8,
+      "notes": "Reached through litellm, but the model strings are hard-coded OpenAI models (no runtime model choice), so OpenAI is the effective hard-coded provider. Also drafts/*.py (gpt-4o-mini) and plugins/e2b.py:57 (gpt-3.5-turbo). The 'openai' package in requirements.txt is never imported directly."
+    },
+    {
+      "canonical_name": "openai/embeddings",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:105",
+          "note": "litellm embedding() with default model text-embedding-ada-002 (line 84), OPENAI_API_KEY set at line 91"
+        }
+      ],
+      "confidence": 0.75,
+      "notes": "Embedding model is a function parameter defaulting to OpenAI's text-embedding-ada-002; the caller could pass another litellm model string, but the default and the only in-repo callers use OpenAI."
+    },
+    {
+      "canonical_name": "serpapi/search-api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/serpapi.py:35",
+          "note": "serpapi.Client(api_key=serpapi_api_key)"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/serpapi.py:53",
+          "note": "client.search(**params)"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack, loadable via babyagi.load_functions('plugins/serpapi'); also a dependency of drafts/generate_function.py."
+    },
+    {
+      "canonical_name": "firecrawl/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/firecrawl.py:13",
+          "note": "FirecrawlApp(api_key=firecrawl_api_key); crawl_url at line 16"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/firecrawl.py:62",
+          "note": "app.scrape_url(url, ...)"
+        },
+        {
+          "location": "examples/custom_flask_example.py:16",
+          "note": "example loads plugins/firecrawl"
+        }
+      ],
+      "confidence": 0.88,
+      "notes": "Optional plugin pack; firecrawl-py installed on demand by the executor."
+    },
+    {
+      "canonical_name": "airtable/web-api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:18",
+          "note": "pyairtable Table(api_token, base_id, table_name)"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:35",
+          "note": "table.create(record_data)"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack."
+    },
+    {
+      "canonical_name": "e2b/code-interpreter",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:17",
+          "note": "with CodeInterpreter() as sandbox (e2b_code_interpreter, key e2b_api_key)"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:19",
+          "note": "sandbox.notebook.exec_cell(code) runs code in the remote E2B sandbox"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack. E2B cloud sandbox."
+    },
+    {
+      "canonical_name": "augie/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": "v1",
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:55",
+          "note": "requests.post to https://beta.api.augie.studio/v1/augies (BASE_URL line 47)"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:78",
+          "note": "requests.get .../v1/augies/{id}/status"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack; Augie Studio video generation API."
+    },
+    {
+      "canonical_name": "harmonic/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/harmonic.py:28",
+          "note": "requests.post/get https://api.harmonic.ai/companies"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/harmonic.py:48",
+          "note": "requests.post https://api.harmonic.ai/search/companies_by_keywords"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack."
+    },
+    {
+      "canonical_name": "payman/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/payman.py:44",
+          "note": "requests.post {base_url}/tasks; base_url https://agent.payman.ai/api or https://agent-sandbox.payman.ai/api (lines 24/27)"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/payman.py:159",
+          "note": "requests.post .../tasks/submissions/{id}/approve"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack. Production and sandbox hosts of the same PayMan API, chosen by a flag; one component."
+    },
+    {
+      "canonical_name": "voilanorbert/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": "2018-01-08",
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/voilanorbert.py:28",
+          "note": "requests.post https://api.voilanorbert.com/2018-01-08/search/name"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/voilanorbert.py:40",
+          "note": "requests.get .../2018-01-08/contacts/{id}"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack; API version taken from URL path."
+    },
+    {
+      "canonical_name": "wokelo/api",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "note": "requests.post https://api.wokelo.ai/auth/token"
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:44",
+          "note": "requests.post https://api.wokelo.ai/api/industry_primer/v3/start/"
+        }
+      ],
+      "confidence": 0.85,
+      "notes": "Optional plugin pack. 'v3' appears only in the industry_primer endpoint path (not auth/assets endpoints), so it was treated as an endpoint/report version, not the API version; api left null."
+    },
+    {
+      "canonical_name": "postgresql/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/drafts/user_db.py:48",
+          "note": "create_database(db_type='postgresql') builds postgresql://user:pw@host(default localhost):5432/db URL"
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+          "note": "create_engine(db_url) connects to it"
+        }
+      ],
+      "confidence": 0.55,
+      "notes": "Only in the draft user_db pack and only via a db_type argument (default sqlite); all other user_db functions are SQLite-only. Kept as an optional user-selectable backend."
+    },
+    {
+      "canonical_name": "mysql/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/drafts/user_db.py:50",
+          "note": "create_database(db_type='mysql') builds mysql+pymysql://...:3306 URL"
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+          "note": "create_engine(db_url) connects to it"
+        }
+      ],
+      "confidence": 0.5,
+      "notes": "Same caveat as postgresql/database: draft pack, optional db_type argument."
+    },
+    {
+      "canonical_name": "pypi/package-index",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": null,
+        "package_name": null
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "babyagi/functionz/core/execution.py:19",
+          "note": "subprocess pip install <package> for any function import that fails to import, at function execution time"
+        }
+      ],
+      "confidence": 0.55,
+      "notes": "Core executor installs missing per-function imports from the package index at runtime (e.g. pyairtable, firecrawl-py, e2b_code_interpreter for plugins). Included as a runtime network dependency; it is a package download rather than an API the app logic uses, hence lower confidence."
+    }
+  ],
+  "out_of_scope": [
+    {
+      "name": "jsdelivr/cdn",
+      "location": "babyagi/dashboard/templates",
+      "reason": "marked and mermaid loaded from cdn.jsdelivr.net only by dashboard HTML/JS in the browser"
+    },
+    {
+      "name": "cdnjs/cdn",
+      "location": "babyagi/dashboard/templates",
+      "reason": "codemirror, cytoscape, three.js loaded from cdnjs.cloudflare.com only by dashboard HTML in the browser"
+    },
+    {
+      "name": "unpkg/cdn",
+      "location": "babyagi/dashboard/templates",
+      "reason": "3d-force-graph loaded from unpkg.com only by dashboard HTML in the browser"
+    },
+    {
+      "name": "google/fonts",
+      "location": "babyagi/dashboard/templates",
+      "reason": "Inter font from fonts.googleapis.com, browser-only"
+    }
+  ],
+  "ruled_out": [
+    {
+      "target": "DBRouter",
+      "location": "babyagi/functionz/db/db_router.py:15",
+      "reason": "dispatcher that only selects LocalDB (SQLite); labeled the concrete sqlite engine instead"
+    },
+    {
+      "target": "Flask app / API blueprint",
+      "location": "babyagi/__init__.py:20",
+      "reason": "inbound web framework serving the dashboard and API"
+    },
+    {
+      "target": "dashboard JS fetch('/api/...')",
+      "location": "babyagi/dashboard/static/js/function_graph.js:96",
+      "reason": "repository's own frontend calling its own backend"
+    },
+    {
+      "target": "cryptography Fernet / encryption_key.json",
+      "location": "babyagi/functionz/db/models.py:27",
+      "reason": "local key generation and encryption of secrets, plain file I/O"
+    },
+    {
+      "target": "scikit-learn cosine_similarity / numpy",
+      "location": "babyagi/functionz/packs/default/ai_functions.py:199",
+      "reason": "local computation"
+    },
+    {
+      "target": "function_embeddings.csv",
+      "location": "babyagi/functionz/packs/default/ai_functions.py:130",
+      "reason": "plain local CSV file I/O, not a database"
+    },
+    {
+      "target": "openai package (requirements.txt)",
+      "location": "requirements.txt",
+      "reason": "never imported directly; OpenAI is reached via litellm and labeled as openai/* at the litellm call sites"
+    },
+    {
+      "target": "Google Cloud Run deployment",
+      "location": ".replit",
+      "reason": "deploymentTarget in Replit config, not consumed by Python code"
+    },
+    {
+      "target": "db (PyPI package) / antiorm in poetry.lock",
+      "location": "pyproject.toml",
+      "reason": "declared poetry dependency never imported by the code"
+    },
+    {
+      "target": "urllib.parse",
+      "location": "babyagi/functionz/packs/drafts/generate_function.py:302",
+      "reason": "URL parsing only, no network call"
+    },
+    {
+      "target": "get_full_directory_contents_cleaned (os.walk)",
+      "location": "babyagi/functionz/packs/default/os.py:10",
+      "reason": "local filesystem listing"
+    }
+  ],
+  "notes": "Default packs (default_functions, ai_functions, os, function_calling_chat) are auto-loaded on import; plugins/* and drafts/* packs are optional and loaded via babyagi.load_functions(...) (examples load plugins/firecrawl and drafts/self_build, drafts/code_writing_functions). They are counted as optional runtime features. LLM access is entirely through litellm with hard-coded OpenAI model names, so both litellm/completion (library) and openai/chat-completions + openai/embeddings (hard-coded provider) are labeled per the guide's multi-provider rule; this double-labeling is the main ambiguity. pypi/package-index (runtime pip install in the executor) and postgresql/mysql (draft pack, optional db_type argument) are included with low confidence. No exact version pins exist for any client package (requirements.txt is unpinned; poetry.lock covers only flask/db/werkzeug/setuptools)."
+}

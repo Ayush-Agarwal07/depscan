@@ -1,0 +1,1457 @@
+[
+  {
+    "repo": "full-stack-fastapi-template",
+    "mode": "static",
+    "tp": [
+      {
+        "tool": "sqlmodel/sdk",
+        "label": "postgresql/database",
+        "how": "evidence",
+        "tool_evidence": [
+          "backend/app/alembic/versions/e2412789c190_initialize_models.py:23",
+          "backend/app/alembic/versions/e2412789c190_initialize_models.py:26",
+          "backend/app/alembic/versions/e2412789c190_initialize_models.py:29",
+          "backend/app/alembic/versions/e2412789c190_initialize_models.py:36",
+          "backend/app/alembic/versions/e2412789c190_initialize_models.py:38"
+        ],
+        "label_evidence": [
+          "backend/app/core/db.py:7",
+          "backend/app/core/config.py:39",
+          ".env:18"
+        ]
+      },
+      {
+        "tool": "emails/sdk",
+        "label": "smtp/email",
+        "how": "evidence",
+        "tool_evidence": [
+          "backend/app/utils.py:42",
+          "backend/app/utils.py:56"
+        ],
+        "label_evidence": [
+          "backend/app/utils.py:56",
+          "backend/app/core/config.py:45",
+          ".env:11"
+        ]
+      },
+      {
+        "tool": "sentry/errors",
+        "label": "sentry/error-tracking",
+        "how": "evidence",
+        "tool_evidence": [
+          "backend/app/main.py:19"
+        ],
+        "label_evidence": [
+          "backend/app/main.py:19",
+          "backend/app/core/config.py:30",
+          "compose.yml:65"
+        ]
+      }
+    ],
+    "fp": [
+      {
+        "tool": "app/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "backend/app/api/routes/items.py:44",
+            "callee": "app.models.ItemPublic.model_validate",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/items.py:45",
+            "callee": "app.models.ItemsPublic",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/items.py:68",
+            "callee": "app.models.Item.model_validate",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/items.py:113",
+            "callee": "app.models.Message",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/login.py:30",
+            "callee": "app.crud.authenticate",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/login.py:38",
+            "callee": "app.models.Token",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/login.py:39",
+            "callee": "app.core.security.create_access_token",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/api/routes/login.py:58",
+            "callee": "app.crud.get_user_by_email",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 130
+      },
+      {
+        "tool": "jinja2/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "backend/app/utils.py:29",
+            "callee": "jinja2.Template",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/utils.py:30",
+            "callee": "jinja2.Template().render",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 2
+      },
+      {
+        "tool": "pwdlib/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "backend/app/core/security.py:11",
+            "callee": "pwdlib.PasswordHash",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/core/security.py:13",
+            "callee": "pwdlib.hashers.argon2.Argon2Hasher",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/core/security.py:14",
+            "callee": "pwdlib.hashers.bcrypt.BcryptHasher",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/core/security.py:32",
+            "callee": "pwdlib.PasswordHash().verify_and_update",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/core/security.py:36",
+            "callee": "pwdlib.PasswordHash().hash",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/tests/api/routes/test_login.py:137",
+            "callee": "pwdlib.hashers.bcrypt.BcryptHasher",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/tests/api/routes/test_login.py:138",
+            "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/tests/api/routes/test_login.py:139",
+            "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash().startswith",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 11
+      },
+      {
+        "tool": "pydantic-settings/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "backend/app/core/config.py:16",
+            "callee": "pydantic_settings.SettingsConfigDict",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 1
+      },
+      {
+        "tool": "sqlalchemy/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "backend/app/alembic/env.py:68",
+            "callee": "sqlalchemy.engine_from_config",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/env.py:74",
+            "callee": "sqlalchemy.engine_from_config().connect",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:23",
+            "callee": "sqlalchemy.UUID",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:35",
+            "callee": "sqlalchemy.UUID",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:23",
+            "callee": "sqlalchemy.String",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:24",
+            "callee": "sqlalchemy.String",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:29",
+            "callee": "sqlalchemy.String",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:30",
+            "callee": "sqlalchemy.String",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 53
+      }
+    ],
+    "fn": []
+  },
+  {
+    "repo": "shell_gpt",
+    "mode": "static",
+    "tp": [
+      {
+        "tool": "openai/chat-completions",
+        "label": "openai-compatible/chat-completions",
+        "how": "evidence",
+        "tool_evidence": [
+          "sgpt/handlers/handler.py:31",
+          "sgpt/handlers/handler.py:123",
+          "sgpt/handlers/handler.py:171",
+          "tests/utils.py:28",
+          "tests/utils.py:33"
+        ],
+        "label_evidence": [
+          "sgpt/handlers/handler.py:31",
+          "sgpt/handlers/handler.py:123",
+          "sgpt/config.py:35"
+        ]
+      }
+    ],
+    "fp": [
+      {
+        "tool": "click/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "sgpt/app.py:190",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/app.py:195",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/app.py:198",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/app.py:246",
+            "callee": "click.types.Choice",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/config.py:93",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/handlers/chat_handler.py:154",
+            "callee": "click.BadParameter",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/handlers/chat_handler.py:160",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/role.py:79",
+            "callee": "click.UsageError",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 10
+      },
+      {
+        "tool": "distro/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "sgpt/role.py:120",
+            "callee": "distro.name",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 1
+      },
+      {
+        "tool": "prompt-toolkit/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "sgpt/app.py:241",
+            "callee": "prompt_toolkit.PromptSession",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/app.py:256",
+            "callee": "prompt_toolkit.PromptSession().prompt",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 2
+      }
+    ],
+    "fn": [
+      {
+        "label": "litellm/completion",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "sgpt/handlers/handler.py:24",
+            "note": "import litellm when USE_LITELLM=true"
+          },
+          {
+            "location": "sgpt/handlers/handler.py:26",
+            "note": "completion = litellm.completion, then called at handler.py:123 with model from DEFAULT_MODEL/--model, api_key, base_url"
+          },
+          {
+            "location": "pyproject.toml:38",
+            "note": "optional extra pins litellm == 1.83.4"
+          }
+        ],
+        "notes": "Optional provider selected by USE_LITELLM config flag; routes to whatever provider the model string names (README mentions Ollama/local LLMs, Azure via wiki). Labeled as multi-provider library; hosting set to cloud since the default model gpt-5.4-mini would route to OpenAI, but it may target a self-hosted backend (e.g. Ollama)."
+      }
+    ]
+  },
+  {
+    "repo": "babyagi",
+    "mode": "static",
+    "tp": [
+      {
+        "tool": "sqlalchemy/sdk",
+        "label": "sqlite/database",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/db/local_db.py:14",
+          "babyagi/functionz/db/local_db.py:16",
+          "babyagi/functionz/db/local_db.py:16",
+          "babyagi/functionz/db/local_db.py:20",
+          "babyagi/functionz/db/local_db.py:23"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/db/local_db.py:14",
+          "babyagi/functionz/packs/drafts/user_db.py:46"
+        ]
+      },
+      {
+        "tool": "litellm/sdk",
+        "label": "litellm/completion",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/ai_functions.py:105",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/function_calling_chat.py:154",
+          "babyagi/functionz/packs/drafts/choose_or_create_function.py:76"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/ai_functions.py:105"
+        ]
+      }
+    ],
+    "fp": [
+      {
+        "tool": "cryptography/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "babyagi/functionz/db/models.py:22",
+            "callee": "cryptography.fernet.Fernet.generate_key",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "babyagi/functionz/db/models.py:22",
+            "callee": "cryptography.fernet.Fernet.generate_key().decode",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "babyagi/functionz/db/models.py:29",
+            "callee": "cryptography.fernet.Fernet",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "babyagi/functionz/db/models.py:120",
+            "callee": "cryptography.fernet.Fernet().decrypt",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "babyagi/functionz/db/models.py:120",
+            "callee": "cryptography.fernet.Fernet().decrypt().decode",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "babyagi/functionz/db/models.py:129",
+            "callee": "cryptography.fernet.Fernet().encrypt",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 6
+      },
+      {
+        "tool": "setuptools/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "setup.py:15",
+            "callee": "setuptools.setup",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "setup.py:24",
+            "callee": "setuptools.find_packages",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 2
+      },
+      {
+        "tool": "sklearn/sdk",
+        "hosting": "unknown",
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/default/ai_functions.py:199",
+            "callee": "sklearn.metrics.pairwise.cosine_similarity",
+            "found_by": "static-fallback",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 1
+      }
+    ],
+    "fn": [
+      {
+        "label": "openai/chat-completions",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/default/ai_functions.py:13",
+            "note": "completion(model=\"gpt-4o\") via litellm, key_dependencies openai_api_key"
+          },
+          {
+            "location": "babyagi/functionz/packs/default/function_calling_chat.py:113",
+            "note": "model=\"gpt-4-turbo\" with tool calling; key_dependencies OPENAI_API_KEY"
+          },
+          {
+            "location": "main.py:8",
+            "note": "stores OPENAI_API_KEY env var as openai_api_key secret for the LLM functions"
+          }
+        ],
+        "notes": "Reached through litellm, but the model strings are hard-coded OpenAI models (no runtime model choice), so OpenAI is the effective hard-coded provider. Also drafts/*.py (gpt-4o-mini) and plugins/e2b.py:57 (gpt-3.5-turbo). The 'openai' package in requirements.txt is never imported directly."
+      },
+      {
+        "label": "openai/embeddings",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/default/ai_functions.py:105",
+            "note": "litellm embedding() with default model text-embedding-ada-002 (line 84), OPENAI_API_KEY set at line 91"
+          }
+        ],
+        "notes": "Embedding model is a function parameter defaulting to OpenAI's text-embedding-ada-002; the caller could pass another litellm model string, but the default and the only in-repo callers use OpenAI."
+      },
+      {
+        "label": "serpapi/search-api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:35",
+            "note": "serpapi.Client(api_key=serpapi_api_key)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:53",
+            "note": "client.search(**params)"
+          }
+        ],
+        "notes": "Optional plugin pack, loadable via babyagi.load_functions('plugins/serpapi'); also a dependency of drafts/generate_function.py."
+      },
+      {
+        "label": "firecrawl/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:13",
+            "note": "FirecrawlApp(api_key=firecrawl_api_key); crawl_url at line 16"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:62",
+            "note": "app.scrape_url(url, ...)"
+          },
+          {
+            "location": "examples/custom_flask_example.py:16",
+            "note": "example loads plugins/firecrawl"
+          }
+        ],
+        "notes": "Optional plugin pack; firecrawl-py installed on demand by the executor."
+      },
+      {
+        "label": "airtable/web-api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/airtable.py:18",
+            "note": "pyairtable Table(api_token, base_id, table_name)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/airtable.py:35",
+            "note": "table.create(record_data)"
+          }
+        ],
+        "notes": "Optional plugin pack."
+      },
+      {
+        "label": "e2b/code-interpreter",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/e2b.py:17",
+            "note": "with CodeInterpreter() as sandbox (e2b_code_interpreter, key e2b_api_key)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/e2b.py:19",
+            "note": "sandbox.notebook.exec_cell(code) runs code in the remote E2B sandbox"
+          }
+        ],
+        "notes": "Optional plugin pack. E2B cloud sandbox."
+      },
+      {
+        "label": "augie/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/augie.py:55",
+            "note": "requests.post to https://beta.api.augie.studio/v1/augies (BASE_URL line 47)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/augie.py:78",
+            "note": "requests.get .../v1/augies/{id}/status"
+          }
+        ],
+        "notes": "Optional plugin pack; Augie Studio video generation API."
+      },
+      {
+        "label": "harmonic/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:28",
+            "note": "requests.post/get https://api.harmonic.ai/companies"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:48",
+            "note": "requests.post https://api.harmonic.ai/search/companies_by_keywords"
+          }
+        ],
+        "notes": "Optional plugin pack."
+      },
+      {
+        "label": "payman/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:44",
+            "note": "requests.post {base_url}/tasks; base_url https://agent.payman.ai/api or https://agent-sandbox.payman.ai/api (lines 24/27)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:159",
+            "note": "requests.post .../tasks/submissions/{id}/approve"
+          }
+        ],
+        "notes": "Optional plugin pack. Production and sandbox hosts of the same PayMan API, chosen by a flag; one component."
+      },
+      {
+        "label": "voilanorbert/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:28",
+            "note": "requests.post https://api.voilanorbert.com/2018-01-08/search/name"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:40",
+            "note": "requests.get .../2018-01-08/contacts/{id}"
+          }
+        ],
+        "notes": "Optional plugin pack; API version taken from URL path."
+      },
+      {
+        "label": "wokelo/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/wokelo.py:21",
+            "note": "requests.post https://api.wokelo.ai/auth/token"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/wokelo.py:44",
+            "note": "requests.post https://api.wokelo.ai/api/industry_primer/v3/start/"
+          }
+        ],
+        "notes": "Optional plugin pack. 'v3' appears only in the industry_primer endpoint path (not auth/assets endpoints), so it was treated as an endpoint/report version, not the API version; api left null."
+      },
+      {
+        "label": "postgresql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:48",
+            "note": "create_database(db_type='postgresql') builds postgresql://user:pw@host(default localhost):5432/db URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Only in the draft user_db pack and only via a db_type argument (default sqlite); all other user_db functions are SQLite-only. Kept as an optional user-selectable backend."
+      },
+      {
+        "label": "mysql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:50",
+            "note": "create_database(db_type='mysql') builds mysql+pymysql://...:3306 URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Same caveat as postgresql/database: draft pack, optional db_type argument."
+      },
+      {
+        "label": "pypi/package-index",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/core/execution.py:19",
+            "note": "subprocess pip install <package> for any function import that fails to import, at function execution time"
+          }
+        ],
+        "notes": "Core executor installs missing per-function imports from the package index at runtime (e.g. pyairtable, firecrawl-py, e2b_code_interpreter for plugins). Included as a runtime network dependency; it is a package download rather than an API the app logic uses, hence lower confidence."
+      }
+    ]
+  },
+  {
+    "repo": "full-stack-fastapi-template",
+    "mode": "llm_only",
+    "tp": [
+      {
+        "tool": "postgresql/database",
+        "label": "postgresql/database",
+        "how": "name",
+        "tool_evidence": [
+          "backend/app/alembic/env.py:68",
+          "backend/app/alembic/env.py:74",
+          "backend/app/alembic/env.py:86",
+          "backend/app/api/routes/login.py:30",
+          "backend/app/api/routes/login.py:58"
+        ],
+        "label_evidence": [
+          "backend/app/core/db.py:7",
+          "backend/app/core/config.py:39",
+          ".env:18"
+        ]
+      },
+      {
+        "tool": "smtp/email",
+        "label": "smtp/email",
+        "how": "name",
+        "tool_evidence": [
+          "backend/app/api/routes/login.py:67",
+          "backend/app/api/routes/users.py:73",
+          "backend/app/utils.py:56"
+        ],
+        "label_evidence": [
+          "backend/app/utils.py:56",
+          "backend/app/core/config.py:45",
+          ".env:11"
+        ]
+      },
+      {
+        "tool": "sentry/errors",
+        "label": "sentry/error-tracking",
+        "how": "evidence",
+        "tool_evidence": [
+          "backend/app/main.py:19"
+        ],
+        "label_evidence": [
+          "backend/app/main.py:19",
+          "backend/app/core/config.py:30",
+          "compose.yml:65"
+        ]
+      }
+    ],
+    "fp": [],
+    "fn": []
+  },
+  {
+    "repo": "shell_gpt",
+    "mode": "llm_only",
+    "tp": [
+      {
+        "tool": "openai-compatible/chat-completions",
+        "label": "openai-compatible/chat-completions",
+        "how": "name",
+        "tool_evidence": [
+          "sgpt/handlers/handler.py:123",
+          "sgpt/handlers/handler.py:159"
+        ],
+        "label_evidence": [
+          "sgpt/handlers/handler.py:31",
+          "sgpt/handlers/handler.py:123",
+          "sgpt/config.py:35"
+        ]
+      }
+    ],
+    "fp": [
+      {
+        "tool": "openai/chat-completions",
+        "hosting": "cloud",
+        "evidence": [
+          {
+            "location": "sgpt/handlers/handler.py:31",
+            "callee": "openai.OpenAI",
+            "found_by": "llm-call",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 1
+      }
+    ],
+    "fn": [
+      {
+        "label": "litellm/completion",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "sgpt/handlers/handler.py:24",
+            "note": "import litellm when USE_LITELLM=true"
+          },
+          {
+            "location": "sgpt/handlers/handler.py:26",
+            "note": "completion = litellm.completion, then called at handler.py:123 with model from DEFAULT_MODEL/--model, api_key, base_url"
+          },
+          {
+            "location": "pyproject.toml:38",
+            "note": "optional extra pins litellm == 1.83.4"
+          }
+        ],
+        "notes": "Optional provider selected by USE_LITELLM config flag; routes to whatever provider the model string names (README mentions Ollama/local LLMs, Azure via wiki). Labeled as multi-provider library; hosting set to cloud since the default model gpt-5.4-mini would route to OpenAI, but it may target a self-hosted backend (e.g. Ollama)."
+      }
+    ]
+  },
+  {
+    "repo": "babyagi",
+    "mode": "llm_only",
+    "tp": [
+      {
+        "tool": "sqlite/database",
+        "label": "sqlite/database",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/db/db_router.py:46",
+          "babyagi/functionz/db/db_router.py:62",
+          "babyagi/functionz/db/db_router.py:80",
+          "babyagi/functionz/db/db_router.py:295",
+          "babyagi/functionz/db/db_router.py:298"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/db/local_db.py:14",
+          "babyagi/functionz/packs/drafts/user_db.py:46"
+        ]
+      },
+      {
+        "tool": "litellm/completion",
+        "label": "litellm/completion",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/drafts/generate_function.py:824"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/ai_functions.py:105"
+        ]
+      },
+      {
+        "tool": "openai/chat-completions",
+        "label": "openai/chat-completions",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/function_calling_chat.py:154",
+          "babyagi/functionz/packs/drafts/choose_or_create_function.py:76",
+          "babyagi/functionz/packs/drafts/choose_or_create_function.py:164"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:113",
+          "main.py:8"
+        ]
+      },
+      {
+        "tool": "airtable/web-api",
+        "label": "airtable/web-api",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/airtable.py:18",
+          "babyagi/functionz/packs/plugins/airtable.py:34",
+          "babyagi/functionz/packs/plugins/airtable.py:51",
+          "babyagi/functionz/packs/plugins/airtable.py:69",
+          "babyagi/functionz/packs/plugins/airtable.py:86"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/airtable.py:18",
+          "babyagi/functionz/packs/plugins/airtable.py:35"
+        ]
+      },
+      {
+        "tool": "e2b/code-interpreter",
+        "label": "e2b/code-interpreter",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/e2b.py:17",
+          "babyagi/functionz/packs/plugins/e2b.py:19",
+          "babyagi/functionz/packs/plugins/e2b.py:61"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/e2b.py:17",
+          "babyagi/functionz/packs/plugins/e2b.py:19"
+        ]
+      },
+      {
+        "tool": "litellm/embeddings",
+        "label": "openai/embeddings",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:105"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:105"
+        ]
+      },
+      {
+        "tool": "augie/augies",
+        "label": "augie/api",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/augie.py:55",
+          "babyagi/functionz/packs/plugins/augie.py:58",
+          "babyagi/functionz/packs/plugins/augie.py:78",
+          "babyagi/functionz/packs/plugins/augie.py:81",
+          "babyagi/functionz/packs/plugins/augie.py:108"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/augie.py:55",
+          "babyagi/functionz/packs/plugins/augie.py:78"
+        ]
+      },
+      {
+        "tool": "wokelo/industry-primer",
+        "label": "wokelo/api",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "babyagi/functionz/packs/plugins/wokelo.py:25",
+          "babyagi/functionz/packs/plugins/wokelo.py:44",
+          "babyagi/functionz/packs/plugins/wokelo.py:46",
+          "babyagi/functionz/packs/plugins/wokelo.py:46"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "babyagi/functionz/packs/plugins/wokelo.py:44"
+        ]
+      }
+    ],
+    "fp": [],
+    "fn": [
+      {
+        "label": "serpapi/search-api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:35",
+            "note": "serpapi.Client(api_key=serpapi_api_key)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:53",
+            "note": "client.search(**params)"
+          }
+        ],
+        "notes": "Optional plugin pack, loadable via babyagi.load_functions('plugins/serpapi'); also a dependency of drafts/generate_function.py."
+      },
+      {
+        "label": "firecrawl/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:13",
+            "note": "FirecrawlApp(api_key=firecrawl_api_key); crawl_url at line 16"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:62",
+            "note": "app.scrape_url(url, ...)"
+          },
+          {
+            "location": "examples/custom_flask_example.py:16",
+            "note": "example loads plugins/firecrawl"
+          }
+        ],
+        "notes": "Optional plugin pack; firecrawl-py installed on demand by the executor."
+      },
+      {
+        "label": "harmonic/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:28",
+            "note": "requests.post/get https://api.harmonic.ai/companies"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:48",
+            "note": "requests.post https://api.harmonic.ai/search/companies_by_keywords"
+          }
+        ],
+        "notes": "Optional plugin pack."
+      },
+      {
+        "label": "payman/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:44",
+            "note": "requests.post {base_url}/tasks; base_url https://agent.payman.ai/api or https://agent-sandbox.payman.ai/api (lines 24/27)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:159",
+            "note": "requests.post .../tasks/submissions/{id}/approve"
+          }
+        ],
+        "notes": "Optional plugin pack. Production and sandbox hosts of the same PayMan API, chosen by a flag; one component."
+      },
+      {
+        "label": "voilanorbert/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:28",
+            "note": "requests.post https://api.voilanorbert.com/2018-01-08/search/name"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:40",
+            "note": "requests.get .../2018-01-08/contacts/{id}"
+          }
+        ],
+        "notes": "Optional plugin pack; API version taken from URL path."
+      },
+      {
+        "label": "postgresql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:48",
+            "note": "create_database(db_type='postgresql') builds postgresql://user:pw@host(default localhost):5432/db URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Only in the draft user_db pack and only via a db_type argument (default sqlite); all other user_db functions are SQLite-only. Kept as an optional user-selectable backend."
+      },
+      {
+        "label": "mysql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:50",
+            "note": "create_database(db_type='mysql') builds mysql+pymysql://...:3306 URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Same caveat as postgresql/database: draft pack, optional db_type argument."
+      },
+      {
+        "label": "pypi/package-index",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/core/execution.py:19",
+            "note": "subprocess pip install <package> for any function import that fails to import, at function execution time"
+          }
+        ],
+        "notes": "Core executor installs missing per-function imports from the package index at runtime (e.g. pyairtable, firecrawl-py, e2b_code_interpreter for plugins). Included as a runtime network dependency; it is a package download rather than an API the app logic uses, hence lower confidence."
+      }
+    ]
+  },
+  {
+    "repo": "full-stack-fastapi-template",
+    "mode": "hybrid",
+    "tp": [
+      {
+        "tool": "postgresql/database",
+        "label": "postgresql/database",
+        "how": "name",
+        "tool_evidence": [
+          "backend/app/alembic/env.py:68",
+          "backend/app/alembic/env.py:74",
+          "backend/app/alembic/env.py:86",
+          "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:23",
+          "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:35"
+        ],
+        "label_evidence": [
+          "backend/app/core/db.py:7",
+          "backend/app/core/config.py:39",
+          ".env:18"
+        ]
+      },
+      {
+        "tool": "smtp/email",
+        "label": "smtp/email",
+        "how": "name",
+        "tool_evidence": [
+          "backend/app/utils.py:42",
+          "backend/app/utils.py:56"
+        ],
+        "label_evidence": [
+          "backend/app/utils.py:56",
+          "backend/app/core/config.py:45",
+          ".env:11"
+        ]
+      },
+      {
+        "tool": "sentry/errors",
+        "label": "sentry/error-tracking",
+        "how": "evidence",
+        "tool_evidence": [
+          "backend/app/main.py:19"
+        ],
+        "label_evidence": [
+          "backend/app/main.py:19",
+          "backend/app/core/config.py:30",
+          "compose.yml:65"
+        ]
+      }
+    ],
+    "fp": [],
+    "fn": []
+  },
+  {
+    "repo": "shell_gpt",
+    "mode": "hybrid",
+    "tp": [
+      {
+        "tool": "openai-compatible/chat-completions",
+        "label": "openai-compatible/chat-completions",
+        "how": "name",
+        "tool_evidence": [
+          "sgpt/handlers/handler.py:159"
+        ],
+        "label_evidence": [
+          "sgpt/handlers/handler.py:31",
+          "sgpt/handlers/handler.py:123",
+          "sgpt/config.py:35"
+        ]
+      }
+    ],
+    "fp": [
+      {
+        "tool": "openai/chat-completions",
+        "hosting": "cloud",
+        "evidence": [
+          {
+            "location": "sgpt/handlers/handler.py:31",
+            "callee": "openai.OpenAI",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/handlers/handler.py:123",
+            "callee": "openai.OpenAI().chat.completions.create",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "sgpt/handlers/handler.py:171",
+            "callee": "openai.OpenAI().chat.completions.create().close",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "tests/utils.py:28",
+            "callee": "openai.types.chat.chat_completion_chunk.ChatCompletionChunk",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "tests/utils.py:33",
+            "callee": "openai.types.chat.chat_completion_chunk.Choice",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          },
+          {
+            "location": "tests/utils.py:36",
+            "callee": "openai.types.chat.chat_completion_chunk.ChoiceDelta",
+            "found_by": "static-alias",
+            "scan_kind": "known_sdk"
+          }
+        ],
+        "n_evidence": 6
+      }
+    ],
+    "fn": [
+      {
+        "label": "litellm/completion",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "sgpt/handlers/handler.py:24",
+            "note": "import litellm when USE_LITELLM=true"
+          },
+          {
+            "location": "sgpt/handlers/handler.py:26",
+            "note": "completion = litellm.completion, then called at handler.py:123 with model from DEFAULT_MODEL/--model, api_key, base_url"
+          },
+          {
+            "location": "pyproject.toml:38",
+            "note": "optional extra pins litellm == 1.83.4"
+          }
+        ],
+        "notes": "Optional provider selected by USE_LITELLM config flag; routes to whatever provider the model string names (README mentions Ollama/local LLMs, Azure via wiki). Labeled as multi-provider library; hosting set to cloud since the default model gpt-5.4-mini would route to OpenAI, but it may target a self-hosted backend (e.g. Ollama)."
+      }
+    ]
+  },
+  {
+    "repo": "babyagi",
+    "mode": "hybrid",
+    "tp": [
+      {
+        "tool": "sqlite/database",
+        "label": "sqlite/database",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/db/db_router.py:46",
+          "babyagi/functionz/db/db_router.py:62",
+          "babyagi/functionz/db/db_router.py:80",
+          "babyagi/functionz/db/db_router.py:295",
+          "babyagi/functionz/db/db_router.py:298"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/db/local_db.py:14",
+          "babyagi/functionz/packs/drafts/user_db.py:46"
+        ]
+      },
+      {
+        "tool": "openai/chat-completions",
+        "label": "openai/chat-completions",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/drafts/generate_function.py:759",
+          "babyagi/functionz/packs/drafts/generate_function.py:784",
+          "babyagi/functionz/packs/plugins/e2b.py:101"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:113",
+          "main.py:8"
+        ]
+      },
+      {
+        "tool": "airtable/web-api",
+        "label": "airtable/web-api",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/airtable.py:18",
+          "babyagi/functionz/packs/plugins/airtable.py:34",
+          "babyagi/functionz/packs/plugins/airtable.py:51",
+          "babyagi/functionz/packs/plugins/airtable.py:69",
+          "babyagi/functionz/packs/plugins/airtable.py:86"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/airtable.py:18",
+          "babyagi/functionz/packs/plugins/airtable.py:35"
+        ]
+      },
+      {
+        "tool": "e2b/code-interpreter",
+        "label": "e2b/code-interpreter",
+        "how": "name",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/e2b.py:17",
+          "babyagi/functionz/packs/plugins/e2b.py:19",
+          "babyagi/functionz/packs/plugins/e2b.py:61"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/e2b.py:17",
+          "babyagi/functionz/packs/plugins/e2b.py:19"
+        ]
+      },
+      {
+        "tool": "litellm/chat-completions",
+        "label": "litellm/completion",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/ai_functions.py:105",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/function_calling_chat.py:154",
+          "babyagi/functionz/packs/drafts/choose_or_create_function.py:76"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/default/ai_functions.py:13",
+          "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "babyagi/functionz/packs/default/ai_functions.py:105"
+        ]
+      },
+      {
+        "tool": "augie/augies",
+        "label": "augie/api",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/augie.py:55",
+          "babyagi/functionz/packs/plugins/augie.py:58",
+          "babyagi/functionz/packs/plugins/augie.py:78",
+          "babyagi/functionz/packs/plugins/augie.py:81",
+          "babyagi/functionz/packs/plugins/augie.py:108"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/augie.py:55",
+          "babyagi/functionz/packs/plugins/augie.py:78"
+        ]
+      },
+      {
+        "tool": "wokelo/industry-primer",
+        "label": "wokelo/api",
+        "how": "evidence",
+        "tool_evidence": [
+          "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "babyagi/functionz/packs/plugins/wokelo.py:25",
+          "babyagi/functionz/packs/plugins/wokelo.py:44",
+          "babyagi/functionz/packs/plugins/wokelo.py:46",
+          "babyagi/functionz/packs/plugins/wokelo.py:46"
+        ],
+        "label_evidence": [
+          "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "babyagi/functionz/packs/plugins/wokelo.py:44"
+        ]
+      }
+    ],
+    "fp": [],
+    "fn": [
+      {
+        "label": "openai/embeddings",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/default/ai_functions.py:105",
+            "note": "litellm embedding() with default model text-embedding-ada-002 (line 84), OPENAI_API_KEY set at line 91"
+          }
+        ],
+        "notes": "Embedding model is a function parameter defaulting to OpenAI's text-embedding-ada-002; the caller could pass another litellm model string, but the default and the only in-repo callers use OpenAI."
+      },
+      {
+        "label": "serpapi/search-api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:35",
+            "note": "serpapi.Client(api_key=serpapi_api_key)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/serpapi.py:53",
+            "note": "client.search(**params)"
+          }
+        ],
+        "notes": "Optional plugin pack, loadable via babyagi.load_functions('plugins/serpapi'); also a dependency of drafts/generate_function.py."
+      },
+      {
+        "label": "firecrawl/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:13",
+            "note": "FirecrawlApp(api_key=firecrawl_api_key); crawl_url at line 16"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/firecrawl.py:62",
+            "note": "app.scrape_url(url, ...)"
+          },
+          {
+            "location": "examples/custom_flask_example.py:16",
+            "note": "example loads plugins/firecrawl"
+          }
+        ],
+        "notes": "Optional plugin pack; firecrawl-py installed on demand by the executor."
+      },
+      {
+        "label": "harmonic/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:28",
+            "note": "requests.post/get https://api.harmonic.ai/companies"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/harmonic.py:48",
+            "note": "requests.post https://api.harmonic.ai/search/companies_by_keywords"
+          }
+        ],
+        "notes": "Optional plugin pack."
+      },
+      {
+        "label": "payman/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:44",
+            "note": "requests.post {base_url}/tasks; base_url https://agent.payman.ai/api or https://agent-sandbox.payman.ai/api (lines 24/27)"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/payman.py:159",
+            "note": "requests.post .../tasks/submissions/{id}/approve"
+          }
+        ],
+        "notes": "Optional plugin pack. Production and sandbox hosts of the same PayMan API, chosen by a flag; one component."
+      },
+      {
+        "label": "voilanorbert/api",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:28",
+            "note": "requests.post https://api.voilanorbert.com/2018-01-08/search/name"
+          },
+          {
+            "location": "babyagi/functionz/packs/plugins/voilanorbert.py:40",
+            "note": "requests.get .../2018-01-08/contacts/{id}"
+          }
+        ],
+        "notes": "Optional plugin pack; API version taken from URL path."
+      },
+      {
+        "label": "postgresql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:48",
+            "note": "create_database(db_type='postgresql') builds postgresql://user:pw@host(default localhost):5432/db URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Only in the draft user_db pack and only via a db_type argument (default sqlite); all other user_db functions are SQLite-only. Kept as an optional user-selectable backend."
+      },
+      {
+        "label": "mysql/database",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:50",
+            "note": "create_database(db_type='mysql') builds mysql+pymysql://...:3306 URL"
+          },
+          {
+            "location": "babyagi/functionz/packs/drafts/user_db.py:63",
+            "note": "create_engine(db_url) connects to it"
+          }
+        ],
+        "notes": "Same caveat as postgresql/database: draft pack, optional db_type argument."
+      },
+      {
+        "label": "pypi/package-index",
+        "python_evidence": true,
+        "evidence": [
+          {
+            "location": "babyagi/functionz/core/execution.py:19",
+            "note": "subprocess pip install <package> for any function import that fails to import, at function execution time"
+          }
+        ],
+        "notes": "Core executor installs missing per-function imports from the package index at runtime (e.g. pyairtable, firecrawl-py, e2b_code_interpreter for plugins). Included as a runtime network dependency; it is a package download rather than an API the app logic uses, hence lower confidence."
+      }
+    ]
+  }
+]

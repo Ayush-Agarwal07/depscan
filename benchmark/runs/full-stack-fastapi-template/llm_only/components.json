@@ -1,0 +1,667 @@
+{
+  "mode": "llm_only",
+  "repo": "full-stack-fastapi-template",
+  "components": [
+    {
+      "canonical_name": "postgresql/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "package_name": "app",
+      "package_version": "0.1.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 69
+      },
+      "min_confidence": 0.6,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/alembic/env.py:68",
+          "callee": "sqlalchemy.engine_from_config",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/alembic/env.py:74",
+          "callee": "sqlalchemy.engine_from_config().connect",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "backend/app/alembic/env.py:86",
+          "callee": "alembic.env.run_migrations_online",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "backend/app/api/routes/login.py:30",
+          "callee": "app.crud.authenticate",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/app/api/routes/login.py:58",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/api/routes/login.py:85",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/api/routes/login.py:92",
+          "callee": "app.crud.update_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/api/routes/login.py:109",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/api/routes/users.py:61",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/api/routes/users.py:68",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/api/routes/users.py:90",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "backend/app/api/routes/users.py:151",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.72
+        },
+        {
+          "location": "backend/app/api/routes/users.py:158",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/api/routes/users.py:204",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/api/routes/users.py:210",
+          "callee": "app.crud.update_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/core/db.py:7",
+          "callee": "sqlmodel.create_engine",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "backend/app/core/db.py:33",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/crud.py:46",
+          "callee": "crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/initial_data.py:12",
+          "callee": "sqlmodel.Session",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/app/initial_data.py:13",
+          "callee": "app.core.db.init_db",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/app/initial_data.py:18",
+          "callee": "initial_data.init",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:30",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:58",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:71",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:72",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:85",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:117",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:132",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_items.py:157",
+          "callee": "tests.utils.item.create_random_item",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:94",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:55",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:66",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:74",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:94",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:112",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.72
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:122",
+          "callee": "tests.utils.user.create_random_user",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:153",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:185",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:190",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.72
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:288",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:364",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:403",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:408",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:424",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:469",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:496",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:514",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/conftest.py:17",
+          "callee": "sqlmodel.Session",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/conftest.py:18",
+          "callee": "app.core.db.init_db",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/conftest.py:21",
+          "callee": "sqlmodel.Session().execute",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "backend/tests/conftest.py:23",
+          "callee": "sqlmodel.Session().execute",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/conftest.py:24",
+          "callee": "sqlmodel.Session().commit",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/tests/conftest.py:40",
+          "callee": "tests.utils.user.authentication_token_from_email",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:15",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:24",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:25",
+          "callee": "app.crud.authenticate",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:33",
+          "callee": "app.crud.authenticate",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:41",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:65",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:73",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:84",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:88",
+          "callee": "app.crud.update_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:116",
+          "callee": "app.crud.authenticate",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/utils/item.py:10",
+          "callee": "tests.utils.user.create_random_user",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/utils/item.py:16",
+          "callee": "app.crud.create_item",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.6
+        },
+        {
+          "location": "backend/tests/utils/user.py:26",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/utils/user.py:39",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/utils/user.py:42",
+          "callee": "app.crud.create_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        },
+        {
+          "location": "backend/tests/utils/user.py:47",
+          "callee": "app.crud.update_user",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "canonical_name": "sentry/errors",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": "sentry-sdk",
+      "package_version": "2.70.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 1
+      },
+      "min_confidence": 0.95,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/main.py:19",
+          "callee": "sentry_sdk.init",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "canonical_name": "smtp/email",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": "app",
+      "package_version": "0.1.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 3
+      },
+      "min_confidence": 0.75,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/api/routes/login.py:67",
+          "callee": "app.utils.send_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/api/routes/users.py:73",
+          "callee": "app.utils.send_email",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "backend/app/utils.py:56",
+          "callee": "emails.message.Message().send",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.88
+        }
+      ]
+    }
+  ],
+  "inbound": {
+    "role": "inbound",
+    "packages": {},
+    "call_sites": 0,
+    "evidence": []
+  },
+  "hosting_conflicts": [
+    {
+      "canonical_name": "smtp/email",
+      "hosting_votes": {
+        "cloud": 2,
+        "self-hosted": 1
+      }
+    }
+  ],
+  "renames_detected": {},
+  "exclude_patterns": []
+}

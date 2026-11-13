@@ -1,0 +1,2570 @@
+{
+  "mode": "static",
+  "repo": "full-stack-fastapi-template",
+  "components": [
+    {
+      "canonical_name": "app/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "app",
+      "package_version": "0.1.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 130
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/api/routes/items.py:44",
+          "callee": "app.models.ItemPublic.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:45",
+          "callee": "app.models.ItemsPublic",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:68",
+          "callee": "app.models.Item.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:113",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:30",
+          "callee": "app.crud.authenticate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:38",
+          "callee": "app.models.Token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:39",
+          "callee": "app.core.security.create_access_token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:58",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:63",
+          "callee": "app.utils.generate_password_reset_token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:64",
+          "callee": "app.utils.generate_reset_password_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:67",
+          "callee": "app.utils.send_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:72",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:82",
+          "callee": "app.utils.verify_password_reset_token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:85",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:91",
+          "callee": "app.models.UserUpdate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:92",
+          "callee": "app.crud.update_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:97",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:109",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:116",
+          "callee": "app.utils.generate_password_reset_token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/login.py:117",
+          "callee": "app.utils.generate_reset_password_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/private.py:29",
+          "callee": "app.models.User",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/private.py:32",
+          "callee": "app.core.security.get_password_hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:50",
+          "callee": "app.models.UserPublic.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:51",
+          "callee": "app.models.UsersPublic",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:61",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:68",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:70",
+          "callee": "app.utils.generate_new_account_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:73",
+          "callee": "app.utils.send_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:90",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:110",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:117",
+          "callee": "app.core.security.get_password_hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:121",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:143",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:151",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:157",
+          "callee": "app.models.UserCreate.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:158",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:204",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:210",
+          "callee": "app.crud.update_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:232",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/utils.py:20",
+          "callee": "app.utils.generate_test_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/utils.py:21",
+          "callee": "app.utils.send_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/utils.py:26",
+          "callee": "app.models.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/db.py:28",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/db.py:33",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:11",
+          "callee": "app.models.User.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:12",
+          "callee": "app.core.security.get_password_hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:25",
+          "callee": "app.core.security.get_password_hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:50",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:52",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:64",
+          "callee": "app.models.Item.model_validate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/initial_data.py:13",
+          "callee": "app.core.db.init_db",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:87",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:94",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:95",
+          "callee": "app.utils.generate_password_reset_token",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:109",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:141",
+          "callee": "app.models.User",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:146",
+          "callee": "app.models.User().hashed_password.startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:157",
+          "callee": "app.models.User().hashed_password.startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:159",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:171",
+          "callee": "app.core.security.get_password_hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:172",
+          "callee": "app.core.security.get_password_hash().startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:175",
+          "callee": "app.models.User",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:191",
+          "callee": "app.models.User().hashed_password.startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:55",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:65",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:66",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:74",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:93",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:94",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:112",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:152",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:153",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:184",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:185",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:189",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:190",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:245",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:261",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:287",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:288",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:338",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:363",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:364",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:402",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:403",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:407",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:408",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:423",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:424",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:468",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:469",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:496",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:513",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:514",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:18",
+          "callee": "app.core.db.init_db",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:14",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:15",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:23",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:24",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:25",
+          "callee": "app.crud.authenticate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:33",
+          "callee": "app.crud.authenticate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:40",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:41",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:48",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:49",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:56",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:57",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:64",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:65",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:72",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:73",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:83",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:84",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:86",
+          "callee": "app.models.UserUpdate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:88",
+          "callee": "app.crud.update_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:92",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:107",
+          "callee": "app.models.User",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:113",
+          "callee": "app.models.User().hashed_password.startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:116",
+          "callee": "app.crud.authenticate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:123",
+          "callee": "app.crud.authenticate().hashed_password.startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:125",
+          "callee": "app.core.security.verify_password",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/item.py:15",
+          "callee": "app.models.ItemCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/item.py:16",
+          "callee": "app.crud.create_item",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:25",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:26",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:39",
+          "callee": "app.crud.get_user_by_email",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:41",
+          "callee": "app.models.UserCreate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:42",
+          "callee": "app.crud.create_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:44",
+          "callee": "app.models.UserUpdate",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/utils/user.py:47",
+          "callee": "app.crud.update_user",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "emails/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "emails",
+      "package_version": "1.1.2",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 2
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/utils.py:42",
+          "callee": "emails.message.Message",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/utils.py:56",
+          "callee": "emails.message.Message().send",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "jinja2/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "jinja2",
+      "package_version": "3.1.6",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 2
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/utils.py:29",
+          "callee": "jinja2.Template",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/utils.py:30",
+          "callee": "jinja2.Template().render",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "pwdlib/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "pwdlib",
+      "package_version": "0.3.1",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 11
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/core/security.py:11",
+          "callee": "pwdlib.PasswordHash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/security.py:13",
+          "callee": "pwdlib.hashers.argon2.Argon2Hasher",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/security.py:14",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/security.py:32",
+          "callee": "pwdlib.PasswordHash().verify_and_update",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/security.py:36",
+          "callee": "pwdlib.PasswordHash().hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:137",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:138",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_login.py:139",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash().startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:102",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:103",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/crud/test_user.py:104",
+          "callee": "pwdlib.hashers.bcrypt.BcryptHasher().hash().startswith",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "pydantic-settings/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "pydantic-settings",
+      "package_version": "2.15.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 1
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/core/config.py:16",
+          "callee": "pydantic_settings.SettingsConfigDict",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "sentry/errors",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": "sentry-sdk",
+      "package_version": "2.70.0",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-alias": 1
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/main.py:19",
+          "callee": "sentry_sdk.init",
+          "found_by": "static-alias",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "sqlalchemy/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "sqlalchemy",
+      "package_version": "2.0.51",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 53
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/alembic/env.py:68",
+          "callee": "sqlalchemy.engine_from_config",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/env.py:74",
+          "callee": "sqlalchemy.engine_from_config().connect",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:23",
+          "callee": "sqlalchemy.UUID",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/1a31ce608336_add_cascade_delete_relationships.py:35",
+          "callee": "sqlalchemy.UUID",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:23",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:24",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:29",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:30",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:35",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:36",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:41",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:42",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:49",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:50",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:55",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:56",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:61",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:62",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:67",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/9c0a54914c78_add_max_length_for_string_varchar_.py:68",
+          "callee": "sqlalchemy.String",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:26",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:26",
+          "callee": "sqlalchemy.dialects.postgresql.UUID",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:26",
+          "callee": "sqlalchemy.text",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:27",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:27",
+          "callee": "sqlalchemy.dialects.postgresql.UUID",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:27",
+          "callee": "sqlalchemy.text",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:28",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:28",
+          "callee": "sqlalchemy.dialects.postgresql.UUID",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:59",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:60",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/d98dd8ec85a3_edit_replace_id_integers_in_all_models_.py:61",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:23",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:24",
+          "callee": "sqlalchemy.Boolean",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:24",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:25",
+          "callee": "sqlalchemy.Boolean",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:25",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:26",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:27",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:27",
+          "callee": "sqlalchemy.Integer",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:28",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:31",
+          "callee": "sqlalchemy.PrimaryKeyConstraint",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:36",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:37",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:37",
+          "callee": "sqlalchemy.Integer",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:38",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:39",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:39",
+          "callee": "sqlalchemy.Integer",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:40",
+          "callee": "sqlalchemy.ForeignKeyConstraint",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:44",
+          "callee": "sqlalchemy.PrimaryKeyConstraint",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py:22",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py:22",
+          "callee": "sqlalchemy.DateTime",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py:23",
+          "callee": "sqlalchemy.Column",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/fe56fa70289e_add_created_at_to_user_and_item.py:23",
+          "callee": "sqlalchemy.DateTime",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    },
+    {
+      "canonical_name": "sqlmodel/sdk",
+      "hosting": "unknown",
+      "default_target": null,
+      "package_name": "sqlmodel",
+      "package_version": "0.0.47",
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: lockfile:uv.lock; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "static-fallback": 90
+      },
+      "min_confidence": null,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:23",
+          "callee": "sqlmodel.sql.sqltypes.AutoString",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:26",
+          "callee": "sqlmodel.sql.sqltypes.AutoString",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:29",
+          "callee": "sqlmodel.sql.sqltypes.AutoString",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:36",
+          "callee": "sqlmodel.sql.sqltypes.AutoString",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/alembic/versions/e2412789c190_initialize_models.py:38",
+          "callee": "sqlmodel.sql.sqltypes.AutoString",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:22",
+          "callee": "sqlmodel.func.count",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:22",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:22",
+          "callee": "sqlmodel.select().select_from",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.col",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.col().desc",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.select().order_by",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.select().order_by().offset",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:25",
+          "callee": "sqlmodel.select().order_by().offset().limit",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:30",
+          "callee": "sqlmodel.func.count",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:30",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:30",
+          "callee": "sqlmodel.select().select_from",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:30",
+          "callee": "sqlmodel.select().select_from().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:36",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:36",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:36",
+          "callee": "sqlmodel.select().where().order_by",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:36",
+          "callee": "sqlmodel.select().where().order_by().offset",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:36",
+          "callee": "sqlmodel.select().where().order_by().offset().limit",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:38",
+          "callee": "sqlmodel.col",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/items.py:38",
+          "callee": "sqlmodel.col().desc",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:42",
+          "callee": "sqlmodel.func.count",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:42",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:42",
+          "callee": "sqlmodel.select().select_from",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.col",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.col().desc",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.select().order_by",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.select().order_by().offset",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:46",
+          "callee": "sqlmodel.select().order_by().offset().limit",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:228",
+          "callee": "sqlmodel.col",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:228",
+          "callee": "sqlmodel.delete",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/api/routes/users.py:228",
+          "callee": "sqlmodel.delete().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/db.py:7",
+          "callee": "sqlmodel.create_engine",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/db.py:25",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/core/db.py:25",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:35",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/crud.py:35",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/initial_data.py:12",
+          "callee": "sqlmodel.Session",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:14",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:17",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:22",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:26",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:27",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:28",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:33",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:36",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:37",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:41",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:42",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:46",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:47",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:52",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:54",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:55",
+          "callee": "sqlmodel.Relationship",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:71",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:72",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:82",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:83",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:88",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:89",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:90",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:93",
+          "callee": "sqlmodel.Relationship",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/app/models.py:126",
+          "callee": "sqlmodel.Field",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_private.py:22",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_private.py:22",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:217",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:217",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:241",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:241",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:333",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:333",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:377",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:377",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:443",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:443",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:446",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:446",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:478",
+          "callee": "sqlmodel.select",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/api/routes/test_users.py:478",
+          "callee": "sqlmodel.select().where",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:17",
+          "callee": "sqlmodel.Session",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:20",
+          "callee": "sqlmodel.delete",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:21",
+          "callee": "sqlmodel.Session().execute",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:22",
+          "callee": "sqlmodel.delete",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:23",
+          "callee": "sqlmodel.Session().execute",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        },
+        {
+          "location": "backend/tests/conftest.py:24",
+          "callee": "sqlmodel.Session().commit",
+          "found_by": "static-fallback",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": null
+        }
+      ]
+    }
+  ],
+  "inbound": {
+    "role": "inbound",
+    "packages": {
+      "fastapi": 72
+    },
+    "call_sites": 72,
+    "evidence": [
+      "backend/app/api/main.py:6",
+      "backend/app/api/main.py:7",
+      "backend/app/api/main.py:8",
+      "backend/app/api/main.py:9",
+      "backend/app/api/main.py:10",
+      "backend/app/api/main.py:14",
+      "backend/app/api/routes/items.py:10",
+      "backend/app/api/routes/items.py:13",
+      "backend/app/api/routes/items.py:48",
+      "backend/app/api/routes/items.py:55",
+      "backend/app/api/routes/items.py:57",
+      "backend/app/api/routes/items.py:61",
+      "backend/app/api/routes/items.py:75",
+      "backend/app/api/routes/items.py:88",
+      "backend/app/api/routes/items.py:90",
+      "backend/app/api/routes/items.py:99",
+      "backend/app/api/routes/items.py:108",
+      "backend/app/api/routes/items.py:110",
+      "backend/app/api/routes/login.py:20",
+      "backend/app/api/routes/login.py:23",
+      "backend/app/api/routes/login.py:34",
+      "backend/app/api/routes/login.py:36",
+      "backend/app/api/routes/login.py:45",
+      "backend/app/api/routes/login.py:53",
+      "backend/app/api/routes/login.py:77",
+      "backend/app/api/routes/login.py:84",
+      "backend/app/api/routes/login.py:88",
+      "backend/app/api/routes/login.py:90",
+      "backend/app/api/routes/login.py:100",
+      "backend/app/api/routes/login.py:102",
+      "backend/app/api/routes/login.py:112",
+      "backend/app/api/routes/login.py:121",
+      "backend/app/api/routes/private.py:13",
+      "backend/app/api/routes/private.py:23",
+      "backend/app/api/routes/users.py:29",
+      "backend/app/api/routes/users.py:32",
+      "backend/app/api/routes/users.py:34",
+      "backend/app/api/routes/users.py:54",
+      "backend/app/api/routes/users.py:55",
+      "backend/app/api/routes/users.py:63",
+      "backend/app/api/routes/users.py:81",
+      "backend/app/api/routes/users.py:92",
+      "backend/app/api/routes/users.py:103",
+      "backend/app/api/routes/users.py:112",
+      "backend/app/api/routes/users.py:114",
+      "backend/app/api/routes/users.py:124",
+      "backend/app/api/routes/users.py:132",
+      "backend/app/api/routes/users.py:138",
+      "backend/app/api/routes/users.py:146",
+      "backend/app/api/routes/users.py:153",
+      "backend/app/api/routes/users.py:162",
+      "backend/app/api/routes/users.py:173",
+      "backend/app/api/routes/users.py:178",
+      "backend/app/api/routes/users.py:182",
+      "backend/app/api/routes/users.py:184",
+      "backend/app/api/routes/users.py:199",
+      "backend/app/api/routes/users.py:206",
+      "backend/app/api/routes/users.py:214",
+      "backend/app/api/routes/users.py:214",
+      "backend/app/api/routes/users.py:223",
+      "backend/app/api/routes/users.py:225",
+      "backend/app/api/routes/utils.py:8",
+      "backend/app/api/routes/utils.py:11",
+      "backend/app/api/routes/utils.py:13",
+      "backend/app/api/routes/utils.py:29",
+      "backend/app/main.py:21",
+      "backend/app/main.py:27",
+      "backend/app/main.py:35",
+      "backend/app/main.py:36",
+      "backend/tests/conftest.py:29",
+      "backend/tests/crud/test_user.py:77",
+      "backend/tests/crud/test_user.py:77"
+    ]
+  },
+  "hosting_conflicts": [],
+  "renames_detected": {},
+  "exclude_patterns": []
+}

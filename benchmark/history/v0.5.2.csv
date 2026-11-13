@@ -1,0 +1,13 @@
+set,repo,mode,labels,tool,tp,fp,fn,strict_tp,api_ok,api_n,pkg_ok,pkg_n,candidates,static_n,llm_n,llm_questions,tokens_in,tokens_out,cost_usd,invalid,model,precision,recall,f1,strict_f1,name_accuracy,version_accuracy,pct_llm
+heldout,full-stack-fastapi-template,static,3,8,3,5,0,0,0,0,2,3,382,362,0,0,0,0,0.0,0,,0.375,1.0,0.545,0.0,0.0,0.667,0.0
+heldout,shell_gpt,static,2,4,1,3,1,0,0,0,0,0,77,19,0,0,0,0,0.0,0,,0.25,0.5,0.333,0.0,0.0,,0.0
+heldout,babyagi,static,16,5,2,3,14,0,0,0,0,0,310,158,0,0,0,0,0.0,0,,0.4,0.125,0.19,0.0,0.0,,0.0
+heldout,ALL heldout,static,21,17,6,11,15,0,0,0,2,3,769,539,0,0,0,0,0.0,0,,0.353,0.286,0.316,0.0,0.0,0.667,0.0
+heldout,full-stack-fastapi-template,llm_only,3,3,3,0,0,2,0,0,1,3,382,0,382,382,1665415,114054,6.1031,0,claude-opus-5-5,1.0,1.0,1.0,0.667,0.667,0.333,100.0
+heldout,shell_gpt,llm_only,2,2,1,1,1,1,0,0,0,0,77,0,77,77,349980,21934,1.3082,0,claude-opus-5-5,0.5,0.5,0.5,0.5,1.0,,100.0
+heldout,babyagi,llm_only,16,8,8,0,8,5,1,1,0,0,310,0,310,310,1392135,90225,5.1701,0,claude-opus-5-5,1.0,0.5,0.667,0.417,0.625,1.0,100.0
+heldout,ALL heldout,llm_only,21,13,12,1,9,8,1,1,1,3,769,0,769,769,3407530,226213,12.5814,0,claude-opus-5-5,0.923,0.571,0.706,0.471,0.667,0.5,100.0
+heldout,full-stack-fastapi-template,hybrid,3,3,3,0,0,2,0,0,2,3,382,73,309,27,123066,8608,0.555,0,claude-opus-5-5,1.0,1.0,1.0,0.667,0.667,0.667,80.9
+heldout,shell_gpt,hybrid,2,2,1,1,1,1,0,0,0,0,77,6,71,61,280657,17397,1.064,0,claude-opus-5-5,0.5,0.5,0.5,0.5,1.0,,92.2
+heldout,babyagi,hybrid,16,7,7,0,9,4,1,1,0,0,310,76,234,157,720720,47313,2.7761,0,claude-opus-5-5,1.0,0.438,0.609,0.348,0.571,1.0,75.5
+heldout,ALL heldout,hybrid,21,12,11,1,10,7,1,1,2,3,769,155,614,245,1124443,73318,4.3951,0,claude-opus-5-5,0.917,0.524,0.667,0.424,0.636,0.75,79.8

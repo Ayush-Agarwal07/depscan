@@ -1,0 +1,53 @@
+{
+  "depscan_version": "0.5.2",
+  "repo": "full-stack-fastapi-template",
+  "mode": "static",
+  "requested_llm": "claude-cli",
+  "provider": null,
+  "model": null,
+  "prompt_sha256": null,
+  "llm_questions": 0,
+  "api_calls": 0,
+  "cache_hits": 0,
+  "invalid_answers": 0,
+  "tokens": {},
+  "tokens_cold_run": {},
+  "cost_usd": 0.0,
+  "cost_usd_cold_run": 0.0,
+  "seconds": {
+    "scan": 0.1,
+    "prepare": 0.0,
+    "classify": 0.0,
+    "merge": 0.0,
+    "total": 0.2
+  },
+  "scan": {
+    "files_scanned": 42,
+    "call_sites": 880,
+    "counts": {
+      "known_sdk": 362,
+      "unclear": 20,
+      "ignored": 498
+    },
+    "dependency_files": [
+      "backend/pyproject.toml",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "import_roots": [
+      ".",
+      "backend",
+      "backend/app"
+    ],
+    "renames": {},
+    "exclude_patterns": [],
+    "skip": []
+  },
+  "parse_failures": [
+    "backend/app/api/deps.py: SyntaxError: multiple exception types must be parenthesized (deps.py, line 36)"
+  ],
+  "components": 8,
+  "installed_versions_read": false,
+  "tool_hash": "60356424b0268079770f8504f34135bc21943b4e72f69bba2b21f12122c08eed",
+  "benchmark_set": "heldout"
+}

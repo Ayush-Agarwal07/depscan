@@ -1,0 +1,60 @@
+{
+  "depscan_version": "0.5.2",
+  "repo": "full-stack-fastapi-template",
+  "mode": "hybrid",
+  "requested_llm": "claude-cli",
+  "provider": "claude-cli",
+  "model": "claude-opus-5-5",
+  "prompt_sha256": "c7ffcb5d6c7cd5e520bc5c52d4f0aa111f0367a6f23d84f0b1168e52ecd1369d",
+  "llm_questions": 27,
+  "api_calls": 0,
+  "cache_hits": 27,
+  "invalid_answers": 0,
+  "tokens": {
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "tokens_cold_run": {
+    "cost_usd": 0.5549984,
+    "input_tokens": 123066,
+    "output_tokens": 8608
+  },
+  "cost_usd": 0.0,
+  "cost_usd_cold_run": 0.555,
+  "seconds": {
+    "scan": 0.1,
+    "prepare": 0.0,
+    "classify": 0.0,
+    "merge": 0.0,
+    "total": 0.2
+  },
+  "scan": {
+    "files_scanned": 42,
+    "call_sites": 880,
+    "counts": {
+      "known_sdk": 362,
+      "unclear": 20,
+      "ignored": 498
+    },
+    "dependency_files": [
+      "backend/pyproject.toml",
+      "pyproject.toml",
+      "uv.lock"
+    ],
+    "import_roots": [
+      ".",
+      "backend",
+      "backend/app"
+    ],
+    "renames": {},
+    "exclude_patterns": [],
+    "skip": []
+  },
+  "parse_failures": [
+    "backend/app/api/deps.py: SyntaxError: multiple exception types must be parenthesized (deps.py, line 36)"
+  ],
+  "components": 3,
+  "installed_versions_read": false,
+  "tool_hash": "60356424b0268079770f8504f34135bc21943b4e72f69bba2b21f12122c08eed",
+  "benchmark_set": "heldout"
+}

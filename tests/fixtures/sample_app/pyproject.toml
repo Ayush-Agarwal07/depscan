@@ -1,0 +1,4 @@
+[project]
+name = "sample-app"
+version = "0.0.1"
+dependencies = ["openai==1.50.0", "redis>=5", "requests", "fastapi"]

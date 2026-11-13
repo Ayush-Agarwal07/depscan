@@ -1,0 +1,656 @@
+{
+  "mode": "llm_only",
+  "repo": "babyagi",
+  "components": [
+    {
+      "canonical_name": "airtable/web-api",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": null,
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: none (no client package); api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 9
+      },
+      "min_confidence": 0.8,
+      "merged_from": [
+        "airtable/api",
+        "airtable/web-api"
+      ],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:18",
+          "callee": "pyairtable.Table",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:34",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:51",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:69",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:86",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:104",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:122",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:139",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/airtable.py:183",
+          "callee": "airtable.init_airtable",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "canonical_name": "augie/augies",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": null,
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": "v1",
+      "api_versions_seen": [
+        "v1"
+      ],
+      "version_source": "package: none (no client package); api: literal in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 6
+      },
+      "min_confidence": 0.8,
+      "merged_from": [
+        "augie/augies",
+        "augie/augies-status"
+      ],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:55",
+          "callee": "requests.post",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:58",
+          "callee": "requests.post().json",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:78",
+          "callee": "requests.get",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:81",
+          "callee": "requests.get().json",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:108",
+          "callee": "augie.create_augie",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/augie.py:117",
+          "callee": "augie.get_augie_status",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "canonical_name": "e2b/code-interpreter",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": null,
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: none (no client package); api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 3
+      },
+      "min_confidence": 0.95,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:17",
+          "callee": "e2b_code_interpreter.CodeInterpreter",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:19",
+          "callee": "e2b_code_interpreter.CodeInterpreter().notebook.exec_cell",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:61",
+          "callee": "e2b.execute_code_in_sandbox",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        }
+      ]
+    },
+    {
+      "canonical_name": "litellm/completion",
+      "hosting": "cloud",
+      "default_target": "openai",
+      "package_name": null,
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: none (no client package); api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 1
+      },
+      "min_confidence": 0.8,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:824",
+          "callee": "functionz.packs.drafts.generate_function.generate_final_function_code",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        }
+      ]
+    },
+    {
+      "canonical_name": "litellm/embeddings",
+      "hosting": "cloud",
+      "default_target": "openai",
+      "package_name": "litellm",
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: unknown; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 1
+      },
+      "min_confidence": 0.82,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:105",
+          "callee": "litellm.embedding",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.82
+        }
+      ]
+    },
+    {
+      "canonical_name": "openai/chat-completions",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": "litellm",
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: unknown; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 15
+      },
+      "min_confidence": 0.85,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/default/ai_functions.py:13",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/default/function_calling_chat.py:112",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/default/function_calling_chat.py:154",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/choose_or_create_function.py:76",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/choose_or_create_function.py:164",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:101",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:237",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:377",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:453",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:620",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:759",
+          "callee": "functionz.packs.drafts.generate_function.analyze_internal_functions",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.88
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/generate_function.py:784",
+          "callee": "functionz.packs.drafts.generate_function.determine_required_external_apis",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/drafts/self_build2.py:76",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:57",
+          "callee": "litellm.completion",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/e2b.py:101",
+          "callee": "e2b.chat_with_llm_and_execute",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.85
+        }
+      ]
+    },
+    {
+      "canonical_name": "sqlite/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "package_name": "sqlalchemy",
+      "package_version": null,
+      "declared_range": ">=1.4,<2.0",
+      "installed_version": null,
+      "api_version": null,
+      "api_versions_seen": [],
+      "version_source": "package: requirements_spec:requirements.txt; api: none in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 11
+      },
+      "min_confidence": 0.7,
+      "merged_from": [],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/db/db_router.py:46",
+          "callee": "functionz.db.local_db.LocalDB().get_active_version",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "babyagi/functionz/db/db_router.py:62",
+          "callee": "functionz.db.local_db.LocalDB().get_active_version",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "babyagi/functionz/db/db_router.py:80",
+          "callee": "functionz.db.local_db.LocalDB().get_all_functions",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/db/db_router.py:295",
+          "callee": "functionz.db.local_db.LocalDB().get_all_functions",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.75
+        },
+        {
+          "location": "babyagi/functionz/db/db_router.py:298",
+          "callee": "functionz.db.local_db.LocalDB().get_active_version",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:14",
+          "callee": "sqlalchemy.create_engine",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:16",
+          "callee": "sqlalchemy.orm.scoped_session",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:16",
+          "callee": "sqlalchemy.orm.sessionmaker",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.8
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:20",
+          "callee": "sqlalchemy.orm.scoped_session()",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:23",
+          "callee": "sqlalchemy.orm.scoped_session()().commit",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.88
+        },
+        {
+          "location": "babyagi/functionz/db/local_db.py:25",
+          "callee": "sqlalchemy.orm.scoped_session()().rollback",
+          "found_by": "llm-call",
+          "scan_kind": "known_sdk",
+          "excluded_by": null,
+          "confidence": 0.7
+        }
+      ]
+    },
+    {
+      "canonical_name": "wokelo/industry-primer",
+      "hosting": "cloud",
+      "default_target": null,
+      "package_name": null,
+      "package_version": null,
+      "declared_range": null,
+      "installed_version": null,
+      "api_version": "v3",
+      "api_versions_seen": [
+        "v3"
+      ],
+      "version_source": "package: none (no client package); api: literal in code",
+      "excluded": false,
+      "found_by": {
+        "llm-call": 12
+      },
+      "min_confidence": 0.85,
+      "merged_from": [
+        "wokelo/auth",
+        "wokelo/auth-token",
+        "wokelo/industry-primer",
+        "wokelo/report-status",
+        "wokelo/reports",
+        "wokelo/reports-api"
+      ],
+      "evidence": [
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:21",
+          "callee": "requests.post",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.96
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:25",
+          "callee": "requests.post().json",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.85
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:44",
+          "callee": "requests.post",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.96
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:46",
+          "callee": "requests.post().json",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:46",
+          "callee": "requests.post().json().get",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:63",
+          "callee": "requests.get",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:65",
+          "callee": "requests.get().json",
+          "found_by": "llm-call",
+          "scan_kind": "undeclared",
+          "excluded_by": null,
+          "confidence": 0.9
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:83",
+          "callee": "requests.post",
+          "found_by": "llm-call",
+          "scan_kind": "raw_http",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:107",
+          "callee": "wokelo.get_auth_token",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:112",
+          "callee": "wokelo.create_industry_snapshot",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:119",
+          "callee": "wokelo.check_report_status",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        },
+        {
+          "location": "babyagi/functionz/packs/plugins/wokelo.py:130",
+          "callee": "wokelo.download_report",
+          "found_by": "llm-call",
+          "scan_kind": "wrapper",
+          "excluded_by": null,
+          "confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "inbound": {
+    "role": "inbound",
+    "packages": {},
+    "call_sites": 0,
+    "evidence": []
+  },
+  "hosting_conflicts": [],
+  "renames_detected": {},
+  "exclude_patterns": []
+}

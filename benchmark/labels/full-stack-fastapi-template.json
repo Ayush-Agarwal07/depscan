@@ -1,0 +1,163 @@
+{
+  "repo": "full-stack-fastapi-template",
+  "repo_path": "benchmark/repos/full-stack-fastapi-template",
+  "labeled_by": "isolated subagent",
+  "components": [
+    {
+      "canonical_name": "postgresql/database",
+      "hosting": "self-hosted",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": "3.3.6",
+        "package_name": "psycopg"
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "backend/app/core/db.py:7",
+          "note": "SQLModel/SQLAlchemy create_engine(settings.DATABASE_URL) used by get_db (api/deps.py:22) and initial_data.py"
+        },
+        {
+          "location": "backend/app/core/config.py:39",
+          "note": "DATABASE_URL (PostgresDsn) rewritten to postgresql+psycopg:// driver"
+        },
+        {
+          "location": ".env:18",
+          "note": "DATABASE_URL=postgresql://postgres:...@localhost:5432/app; compose.yml runs postgres:18 as service db"
+        }
+      ],
+      "confidence": 0.98,
+      "notes": "Also reached by Alembic migrations (backend/app/alembic/env.py:68-74, engine_from_config + connect). psycopg 3.3.6 exact in uv.lock (psycopg-binary 3.3.6 also). Self-hosted: compose.yml runs a postgres:18 container; DATABASE_URL is configurable so a managed Postgres could also be used."
+    },
+    {
+      "canonical_name": "smtp/email",
+      "hosting": "self-hosted",
+      "default_target": "mailpit",
+      "version": {
+        "api": null,
+        "package": "1.1.2",
+        "package_name": "emails"
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "backend/app/utils.py:56",
+          "note": "emails.Message.send(to=..., smtp={host: SMTP_HOST, port: SMTP_PORT, tls/ssl, user, password})"
+        },
+        {
+          "location": "backend/app/core/config.py:45",
+          "note": "SMTP_HOST (default None), SMTP_PORT default 587, SMTP_USER/SMTP_PASSWORD; emails enabled only when SMTP_HOST and EMAILS_FROM_EMAIL set"
+        },
+        {
+          "location": ".env:11",
+          "note": "SMTP_HOST=localhost, SMTP_PORT=1025 (compose.override.yml points SMTP_HOST at the local mailpit container)"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Generic configurable SMTP server via the 'emails' library; called from routes login.py:67 (password recovery), users.py:73 (new account), utils.py:21 (test email). Named by protocol since the host is env-configurable with no code default; dev default is a local Mailpit catcher (localhost:1025), production would be whatever SMTP provider the user configures (could be cloud). Hosting chosen as self-hosted based on the shipped default. emails 1.1.2 exact in uv.lock."
+    },
+    {
+      "canonical_name": "sentry/error-tracking",
+      "hosting": "cloud",
+      "default_target": null,
+      "version": {
+        "api": null,
+        "package": "2.70.0",
+        "package_name": "sentry-sdk"
+      },
+      "python_evidence": true,
+      "evidence": [
+        {
+          "location": "backend/app/main.py:19",
+          "note": "sentry_sdk.init(dsn=str(settings.SENTRY_DSN), enable_tracing=True) when SENTRY_DSN set and not development"
+        },
+        {
+          "location": "backend/app/core/config.py:30",
+          "note": "SENTRY_DSN: HttpUrl | None = None"
+        },
+        {
+          "location": "compose.yml:65",
+          "note": "SENTRY_DSN: ${SENTRY_DSN:-} passed to backend container"
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "Optional, gated by SENTRY_DSN env var (no default DSN). sentry-sdk 2.70.0 exact in uv.lock. Name alternative: sentry/sentry."
+    }
+  ],
+  "out_of_scope": [
+    {
+      "name": "mailpit/http-api",
+      "location": "frontend/tests/utils/mailpit.ts:20",
+      "reason": "Mailpit REST API (/api/v1/search) is queried only by the TypeScript Playwright tests"
+    },
+    {
+      "name": "smokeshow/upload",
+      "location": ".github/workflows/smokeshow.yml:40",
+      "reason": "coverage upload run only in CI workflow (github-actions dependency group), not app runtime"
+    }
+  ],
+  "ruled_out": [
+    {
+      "target": "httpx",
+      "location": "backend/pyproject.toml:14",
+      "reason": "declared dependency but never imported by app code; only used indirectly via fastapi TestClient in tests"
+    },
+    {
+      "target": "fastapi TestClient",
+      "location": "backend/tests/conftest.py:29",
+      "reason": "test-only in-process client against the app itself"
+    },
+    {
+      "target": "smtp.example.com",
+      "location": "backend/tests/api/routes/test_users.py:42",
+      "reason": "patched SMTP host in tests with send_email mocked; test-only"
+    },
+    {
+      "target": "adminer",
+      "location": "compose.yml:35",
+      "reason": "Docker Compose DB admin UI; no Python code talks to it"
+    },
+    {
+      "target": "traefik",
+      "location": "compose.yml:4",
+      "reason": "reverse proxy in front of the app (inbound), not called by Python code"
+    },
+    {
+      "target": "FRONTEND_HOST",
+      "location": "backend/app/core/config.py:26",
+      "reason": "the repo's own frontend URL, used only for CORS and links in emails; never requested"
+    },
+    {
+      "target": "app.frontend static files",
+      "location": "backend/app/main.py:36",
+      "reason": "serves built frontend from a local directory (inbound serving)"
+    },
+    {
+      "target": "pyjwt / pwdlib (argon2, bcrypt)",
+      "location": "backend/app/core/security.py:4",
+      "reason": "local token signing and password hashing, no network"
+    },
+    {
+      "target": "jinja2 email templates",
+      "location": "backend/app/utils.py:29",
+      "reason": "local template rendering from files"
+    },
+    {
+      "target": "alembic",
+      "location": "backend/app/alembic/env.py:68",
+      "reason": "migration tool; its connection goes to the same Postgres already labeled, not a separate service"
+    },
+    {
+      "target": "typer release scripts",
+      "location": "scripts/prepare_release.py:8",
+      "reason": "local file editing of release-notes.md, no network"
+    },
+    {
+      "target": "post_gen_project hook",
+      "location": "hooks/post_gen_project.py",
+      "reason": "local line-ending normalization of .sh files"
+    }
+  ],
+  "notes": "Small FastAPI + SQLModel backend. Python runtime reaches three external services: PostgreSQL (psycopg via SQLAlchemy/SQLModel, also Alembic), an SMTP server (emails library; dev default Mailpit via compose.override.yml / .env localhost:1025), and Sentry (optional via SENTRY_DSN). The TypeScript frontend only calls the repo's own backend; Mailpit's HTTP API is used only by Playwright TS tests. Unsure about SMTP canonical naming (protocol-level 'smtp/email' chosen since host is fully configurable) and its hosting (self-hosted based on shipped dev default; production may be a cloud SMTP provider)."
+}
